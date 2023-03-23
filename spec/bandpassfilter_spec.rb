@@ -36,4 +36,9 @@ RSpec.describe BandPassFilter do
     filter = BandPassFilter.new(soundwave)
     expect(filter.generate).to eq [50, 40, 40, 40, 1000]
   end
+
+  it 'raises an error when no input given' do
+    soundwave = []
+    expect { BandPassFilter.new(soundwave, nil, nil) }.to raise_error(RuntimeError,"Error: No frequencies have been supplied")
+  end
 end
