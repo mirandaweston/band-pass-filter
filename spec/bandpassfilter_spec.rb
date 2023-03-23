@@ -12,4 +12,10 @@ RSpec.describe BandPassFilter do
     filter = BandPassFilter.new(soundwave, 30, 50)
     expect(filter.generate).to eq [30]
   end
+
+  it 'returns soundwave when frequency is above upper limit' do
+    soundwave = [50]
+    filter = BandPassFilter.new(soundwave, 20, 40)
+    expect(filter.generate).to eq [40]
+  end
 end
