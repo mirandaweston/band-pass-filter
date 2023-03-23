@@ -30,4 +30,10 @@ RSpec.describe BandPassFilter do
     filter = BandPassFilter.new(soundwave, 30, 50)
     expect(filter.generate).to eq [30, 30, 30, 50, 50]
   end
+
+  it 'defaults to lower and upper limits 40 and 1000 respectively when no limits given' do
+    soundwave = [50, 20, 40, 35, 1400]
+    filter = BandPassFilter.new(soundwave)
+    expect(filter.generate).to eq [50, 40, 40, 40, 1000]
+  end
 end

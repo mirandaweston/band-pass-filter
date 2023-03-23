@@ -1,5 +1,5 @@
 class BandPassFilter
-  def initialize(soundwave, lower_limit, upper_limit)
+  def initialize(soundwave, lower_limit=40, upper_limit=1000)
     @soundwave = soundwave
     @lower_limit = lower_limit
     @upper_limit = upper_limit
